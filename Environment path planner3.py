@@ -8,7 +8,7 @@ class Environment:
         self.height = height
         self.obstacles = []
 
-        # randomly generate obstacles
+        #randomly generate obstacles
         for i in range(num_obs):
             x = np.random.uniform(0, self.width)
             y = np.random.uniform(0, self.height)
@@ -37,29 +37,25 @@ class Environment:
         ax.set_xlim([0, self.width])
         ax.set_ylim([0, self.height])
 
-        # Plot obstacles
+        #Plot obstacles
         for obstacle in self.obstacles:
             circle = plt.Circle((obstacle[0], obstacle[1]), obstacle[2], color='r')
             ax.add_patch(circle)
 
         plt.show()
 
-class Planner:
-    def __init__(self):
-        pass
+#class Planner:
+    #def __init__(self)
+    #def plan( ... )
 
-    def plan(self, env, start_position, end_position):
-        # Your path planning algorithm here
-        pass
+##Testing
+#env = Environment(num_obs=7, width=10, height=15)
+#env.add_obstacle((4, 8), 1.5)
+#env.remove_obstacle((7, 5), 1.0)
 
-# Example usage
-env = Environment(num_obs=7, width=10, height=15)
-env.add_obstacle((4, 8), 1.5)
-env.remove_obstacle((7, 5), 1.0)
+#print(env.get_obstacle_list())
 
-print(env.get_obstacle_list())
+#env.visualize_environment()
 
-env.visualize_environment()
-
-quad_planner = Planner()
-quad_planner.plan(env, (1,1), (5,14))
+#quad_planner = Planner()
+#quad_planner.plan(env, (1,1), (5,14))
