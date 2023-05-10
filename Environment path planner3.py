@@ -44,18 +44,36 @@ class Environment:
 
         plt.show()
 
-#class Planner:
-    #def __init__(self)
-    #def plan( ... )
+#Path Planner
+class Planner:
+    def __init__(self):
+        pass
 
-##Testing
-#env = Environment(num_obs=7, width=10, height=15)
-#env.add_obstacle((4, 8), 1.5)
-#env.remove_obstacle((7, 5), 1.0)
+    def plan(self, env, start_position, end_position):
+        #path planning algorithm here
+        pass
 
-#print(env.get_obstacle_list())
+#Testing
+#Environment 1
+env1 = Environment(num_obs=7, width=10, height=15)
+env1.add_obstacle((4, 8), 1.5)
+env1.remove_obstacle((7, 5), 1.0)
 
-#env.visualize_environment()
+print(env1.get_obstacle_list())
 
-#quad_planner = Planner()
-#quad_planner.plan(env, (1,1), (5,14))
+env1.visualize_environment()
+
+#Environment 2
+env2 = Environment(num_obs=4, width=10, height=15)
+env2.add_obstacle((4, 8), 1.5)
+env2.remove_obstacle((7, 5), 1.0)
+
+print(env2.get_obstacle_list())
+
+env2.visualize_environment()
+
+quad_planner = Planner()
+quad_planner.plan(env1, (1,1), (5,14))
+quad_planner.plan(env2, (3,7), (1,14))    
+    
+    
