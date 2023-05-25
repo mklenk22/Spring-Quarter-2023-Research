@@ -69,7 +69,7 @@ class RRTPlanner:
         return None
 
     def _generate_random_point(self, env):
-        if random.random() < 0.1:  # With a small probability, sample the goal
+        if random.random() < 0.1:  # Small probability
             return np.array(self.goal_position)
         else:
             return np.array([random.uniform(0, env.width), random.uniform(0, env.height)])
