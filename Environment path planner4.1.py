@@ -69,7 +69,7 @@ class Planner:
             cp.abs(accelerations) <= 0.5
         ]
 
-        # Define the objective function (minimize total acceleration)
+        # Define the objective function 
         objective = cp.Minimize(cp.sum_squares(accelerations))
 
         # Define the problem
